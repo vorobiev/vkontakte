@@ -1,0 +1,57 @@
+<%= form_for(@vkontakte_ad) do |f| %>
+  <% if @vkontakte_ad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vkontakte_ad.errors.count, "error") %> prohibited this vkontakte_ad from being saved:</h2>
+
+      <ul>
+      <% @vkontakte_ad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ad_id %><br />
+    <%= f.number_field :ad_id %>
+  </div>
+  <div class="field">
+    <%= f.label :campaign_id %><br />
+    <%= f.number_field :campaign_id %>
+  </div>
+  <div class="field">
+    <%= f.label :vkontakte_campaign %><br />
+    <%= f.text_field :vkontakte_campaign %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :approved %><br />
+    <%= f.number_field :approved %>
+  </div>
+  <div class="field">
+    <%= f.label :all_limit %><br />
+    <%= f.text_field :all_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :cpc %><br />
+    <%= f.number_field :cpc %>
+  </div>
+  <div class="field">
+    <%= f.label :cpm %><br />
+    <%= f.number_field :cpm %>
+  </div>
+  <div class="field">
+    <%= f.label :disclaimer %><br />
+    <%= f.check_box :disclaimer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

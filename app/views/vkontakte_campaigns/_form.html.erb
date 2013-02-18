@@ -1,0 +1,57 @@
+<%= form_for(@vkontakte_campaign) do |f| %>
+  <% if @vkontakte_campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vkontakte_campaign.errors.count, "error") %> prohibited this vkontakte_campaign from being saved:</h2>
+
+      <ul>
+      <% @vkontakte_campaign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :account_id %><br />
+    <%= f.number_field :account_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br />
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :campaign_id %><br />
+    <%= f.number_field :campaign_id %>
+  </div>
+  <div class="field">
+    <%= f.label :vkontakte_client %><br />
+    <%= f.text_field :vkontakte_client %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :day_limit %><br />
+    <%= f.text_field :day_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :all_limit %><br />
+    <%= f.text_field :all_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_time %><br />
+    <%= f.datetime_select :stop_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

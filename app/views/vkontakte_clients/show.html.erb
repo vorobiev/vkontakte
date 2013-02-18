@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @vkontakte_client.client_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @vkontakte_client.name %>
+</p>
+
+<p>
+  <b>Day limit:</b>
+  <%= @vkontakte_client.day_limit %>
+</p>
+
+<p>
+  <b>All limit:</b>
+  <%= @vkontakte_client.all_limit %>
+</p>
+
+
+<%= link_to 'Edit', edit_vkontakte_client_path(@vkontakte_client) %> |
+<%= link_to 'Back', vkontakte_clients_path %>

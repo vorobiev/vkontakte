@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ad_id: 1
+  campaign_id: 1
+  vkontakte_campaign: 
+  name: MyString
+  status: 1
+  approved: 1
+  all_limit: 9.99
+  cpc: 1
+  cpm: 1
+  disclaimer: false
+
+two:
+  ad_id: 1
+  campaign_id: 1
+  vkontakte_campaign: 
+  name: MyString
+  status: 1
+  approved: 1
+  all_limit: 9.99
+  cpc: 1
+  cpm: 1
+  disclaimer: false

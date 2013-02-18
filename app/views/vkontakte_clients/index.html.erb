@@ -1,0 +1,29 @@
+<h1>Listing vkontakte_clients</h1>
+
+<table>
+  <tr>
+    <th>Client</th>
+    <th>Name</th>
+    <th>Day limit</th>
+    <th>All limit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vkontakte_clients.each do |vkontakte_client| %>
+  <tr>
+    <td><%= vkontakte_client.client_id %></td>
+    <td><%= vkontakte_client.name %></td>
+    <td><%= vkontakte_client.day_limit %></td>
+    <td><%= vkontakte_client.all_limit %></td>
+    <td><%= link_to 'Show', vkontakte_client %></td>
+    <td><%= link_to 'Edit', edit_vkontakte_client_path(vkontakte_client) %></td>
+    <td><%= link_to 'Destroy', vkontakte_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vkontakte client', new_vkontakte_client_path %>

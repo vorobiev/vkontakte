@@ -1,0 +1,41 @@
+<h1>Listing vkontakte_ads</h1>
+
+<table>
+  <tr>
+    <th>Ad</th>
+    <th>Campaign</th>
+    <th>Vkontakte campaign</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Approved</th>
+    <th>All limit</th>
+    <th>Cpc</th>
+    <th>Cpm</th>
+    <th>Disclaimer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vkontakte_ads.each do |vkontakte_ad| %>
+  <tr>
+    <td><%= vkontakte_ad.ad_id %></td>
+    <td><%= vkontakte_ad.campaign_id %></td>
+    <td><%= vkontakte_ad.vkontakte_campaign %></td>
+    <td><%= vkontakte_ad.name %></td>
+    <td><%= vkontakte_ad.status %></td>
+    <td><%= vkontakte_ad.approved %></td>
+    <td><%= vkontakte_ad.all_limit %></td>
+    <td><%= vkontakte_ad.cpc %></td>
+    <td><%= vkontakte_ad.cpm %></td>
+    <td><%= vkontakte_ad.disclaimer %></td>
+    <td><%= link_to 'Show', vkontakte_ad %></td>
+    <td><%= link_to 'Edit', edit_vkontakte_ad_path(vkontakte_ad) %></td>
+    <td><%= link_to 'Destroy', vkontakte_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vkontakte ad', new_vkontakte_ad_path %>

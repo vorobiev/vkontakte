@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vkontakte_campaign.name %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @vkontakte_campaign.account_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @vkontakte_campaign.client_id %>
+</p>
+
+<p>
+  <b>Campaign:</b>
+  <%= @vkontakte_campaign.campaign_id %>
+</p>
+
+<p>
+  <b>Vkontakte client:</b>
+  <%= @vkontakte_campaign.vkontakte_client %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @vkontakte_campaign.status %>
+</p>
+
+<p>
+  <b>Day limit:</b>
+  <%= @vkontakte_campaign.day_limit %>
+</p>
+
+<p>
+  <b>All limit:</b>
+  <%= @vkontakte_campaign.all_limit %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @vkontakte_campaign.start_time %>
+</p>
+
+<p>
+  <b>Stop time:</b>
+  <%= @vkontakte_campaign.stop_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_vkontakte_campaign_path(@vkontakte_campaign) %> |
+<%= link_to 'Back', vkontakte_campaigns_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: 1
+  name: MyString
+  day_limit: 1
+  all_limit: 1
+
+two:
+  client_id: 1
+  name: MyString
+  day_limit: 1
+  all_limit: 1
