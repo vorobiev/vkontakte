@@ -1,0 +1,40 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.6'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'mysql2'
+gem 'vkontakte_api'
+gem 'awesome_print'
+https://www.google.ru/search?client=ubuntu&channel=fs&q=android+ubuntu&ie=utf-8&oe=utf-8&redir_esc=&ei=Q0YmUfbYLseS4AS-y4GwAQ#hl=ru&newwindow=1&client=ubuntu&channel=fs&sclient=psy-ab&q=+%60method_missing%27:+undefined+method+%60less%27+for&oq=+%60method_missing%27:+undefined+method+%60less%27+for&gs_l=serp.3..0l2.792995.792995.7.793701.1.1.0.0.0.0.165.165.0j1.1.0...0.0...1c.1.4.psy-ab.mZENCbYj8LA&pbx=1&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&bvm=bv.42661473,d.bGE&fp=1eb6ac3d184fa520&biw=1920&bih=962
+gem 'less-rails-bootstrap'
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'debugger'

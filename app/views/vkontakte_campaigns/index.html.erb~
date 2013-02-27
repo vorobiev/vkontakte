@@ -1,0 +1,41 @@
+<h1>Listing vkontakte_campaigns</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Account</th>
+    <th>Client</th>
+    <th>Campaign</th>
+    <th>Vkontakte client</th>
+    <th>Status</th>
+    <th>Day limit</th>
+    <th>All limit</th>
+    <th>Start time</th>
+    <th>Stop time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vkontakte_campaigns.each do |vkontakte_campaign| %>
+  <tr>
+    <td><%= vkontakte_campaign.name %></td>
+    <td><%= vkontakte_campaign.account_id %></td>
+    <td><%= vkontakte_campaign.client_id %></td>
+    <td><%= vkontakte_campaign.campaign_id %></td>
+    <td><%= vkontakte_campaign.vkontakte_client %></td>
+    <td><%= vkontakte_campaign.status %></td>
+    <td><%= vkontakte_campaign.day_limit %></td>
+    <td><%= vkontakte_campaign.all_limit %></td>
+    <td><%= vkontakte_campaign.start_time %></td>
+    <td><%= vkontakte_campaign.stop_time %></td>
+    <td><%= link_to 'Show', vkontakte_campaign, :class => 'btn btn-small'  %></td>
+    <td><%= link_to 'Edit', edit_vkontakte_campaign_path(vkontakte_campaign), :class => 'btn btn-small'  %></td>
+    <td><%= link_to 'Destroy', vkontakte_campaign, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-small' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vkontakte campaign', new_vkontakte_campaign_path, :class => 'btn btn-primary' %>
