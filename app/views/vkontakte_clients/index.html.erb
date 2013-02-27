@@ -1,25 +1,22 @@
-<h1>Listing vkontakte_clients</h1>
+ 
+<h1>Клиенты</h1>
 
 <table class="table table-striped">
   <tr>
-    <th>Client</th>
-    <th>Name</th>
-    <th>Day limit</th>
-    <th>All limit</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Клиент</th>
+    <th id="curr">Дневной лимит</th>
+    <th id="curr">Общий лимит</th>
   </tr>
 
 <% @vkontakte_clients.each do |vkontakte_client| %>
   <tr>
-    <td><%= vkontakte_client.client_id %></td>
-    <td><%= vkontakte_client.name %></td>
-    <td><%= vkontakte_client.day_limit %></td>
-    <td><%= vkontakte_client.all_limit %></td>
-    <td><%= link_to 'Show', vkontakte_client %></td>
+    <!--td><%= vkontakte_client.client_id %></td-->
+    <td><%= link_to vkontakte_client.name, vkontakte_client %></td> 
+    <td id="curr"><%= number_to_currency(vkontakte_client.day_limit) %></td>
+    <td id="curr"><%= number_to_currency(vkontakte_client.all_limit) %></td>
+    <!--td><%= link_to 'Show', vkontakte_client %></td>
     <td><%= link_to 'Edit', edit_vkontakte_client_path(vkontakte_client) %></td>
-    <td><%= link_to 'Destroy', vkontakte_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', vkontakte_client, method: :delete, data: { confirm: 'Are you sure?' } %></td!-->
   </tr>
 <% end %>
 </table>

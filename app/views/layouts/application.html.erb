@@ -1,14 +1,55 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Vkontakte</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Vkontakte" %></title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
 
-</body>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="<%= root_path %>">VK</a>
+		  <div class="container-fluid nav-collapse">
+		  	<ul class="nav">
+              <li><%= link_to "Клиенты", vkontakte_clients_path  %></li>
+              <li><%= link_to "Кампании", vkontakte_campaigns_path  %></li>
+			  <li><%= link_to "Объявления", vkontakte_ads_path  %></li>
+			
+            </ul>
+		
+		  </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+	
+	
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+    </div> <!-- /container -->
+
+    <%= javascript_include_tag "application" %>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	  google.load("visualization", "1", {packages:["corechart"]});
+	</script>
+
+  </body>
 </html>
