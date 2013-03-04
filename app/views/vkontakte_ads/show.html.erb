@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Ad:</b>
-  <%= @vkontakte_ad.ad_id %>
-</p>
+<ul class="breadcrumb">
+   <li><%= link_to 'Клиенты', vkontakte_clients_path %><span class="divider">/</span></li>
+   <li><%= link_to 'Кампании', vkontakte_campaigns_path %><span class="divider">/</span></li>
+  
+</ul>
+<h2>
+  
+  <%= @vkontakte_ad.name %>
+</h2>
 
 <p>
   <b>Campaign:</b>
@@ -51,5 +55,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_vkontakte_ad_path(@vkontakte_ad) %> |
-<%= link_to 'Back', vkontakte_ads_path %>
+

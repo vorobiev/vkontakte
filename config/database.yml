@@ -13,7 +13,7 @@ development:
    encoding: utf8
    database: vkontakte_development
    pool: 5
-   username: root
+   username:
    password: 
    socket: /var/run/mysqld/mysqld.sock
 
@@ -26,7 +26,7 @@ test:
   reconnect: false
   database: vkontakte_test
   pool: 5
-  username: root
+  username: 
   password:
   socket: /tmp/mysql.sock
 

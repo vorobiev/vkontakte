@@ -1,55 +1,73 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @vkontakte_campaign.name %>
-</p>
+<ul class="breadcrumb">
+   <li><%= link_to 'Клиенты', vkontakte_clients_path %><span class="divider">/</span></li>
+  
+</ul>
 
-<p>
-  <b>Account:</b>
-  <%= @vkontakte_campaign.account_id %>
-</p>
+<h2>Кампания: <%= @vkontakte_campaign.name %></h2> 
 
-<p>
-  <b>Client:</b>
-  <%= @vkontakte_campaign.client_id %>
-</p>
 
-<p>
-  <b>Campaign:</b>
-  <%= @vkontakte_campaign.campaign_id %>
-</p>
+<div class="span11 campaign_panel">
+<div id="div_main">
+<div class="pull-left"> 
+  <dl class="dl-horizontal">
+    <dt>Аккаунт: </dt>
+    <dd><%= @vkontakte_campaign.account_id %></dd>
+    <dt>Кампания: </dt>
+    <dd><%= @vkontakte_campaign.campaign_id %></dd>
+    <dt>Статус: </dt>
+    <dd><%= @vkontakte_campaign.status %></dd>
+    <dt>ID клиента: </dt>
+    <dd><%= @vkontakte_campaign.client_id %></dd>
+ </dl>
+</div>
+<div class="pull-left">
+ <dl class="dl-horizontal">
+  <dt>Дневной лимит:</dt>
+  <dd><%= number_to_currency @vkontakte_campaign.day_limit %></dd>
+  <dt>Общий лимит</dt>
+  <dd><%= number_to_currency @vkontakte_campaign.all_limit %></dd>
+  <dt>Старт</dt>
+  <dd><%= @vkontakte_campaign.start_time %></dd>
+  <dt>Стоп</dt>
+  <dd><%= @vkontakte_campaign.stop_time %></dd>
+  </dl>
+</div>
+</div>
+</div>
 
-<p>
-  <b>Vkontakte client:</b>
-  <%= @vkontakte_campaign.vkontakte_client %>
-</p>
+<div class="clearfix"></div>
+<h3>Другие объявления <%= @vkontakte_campaign.name %></h3>
 
-<p>
-  <b>Status:</b>
-  <%= @vkontakte_campaign.status %>
-</p>
+<table class="table table-striped">
+  <tr>
+    <th>Имя</th>
+    <th>Кампания</th>
+    <th>Клиент</th>
+    <th>Статус</th>
+    <th>Одобрено</th>
+    <th>Лимит</th>
+    <th>Cpc</th>
+    <th>Cpm</th>
+    <th>Disclaimer</th>
+  </tr>
 
-<p>
-  <b>Day limit:</b>
-  <%= @vkontakte_campaign.day_limit %>
-</p>
-
-<p>
-  <b>All limit:</b>
-  <%= @vkontakte_campaign.all_limit %>
-</p>
-
-<p>
-  <b>Start time:</b>
-  <%= @vkontakte_campaign.start_time %>
-</p>
-
-<p>
-  <b>Stop time:</b>
-  <%= @vkontakte_campaign.stop_time %>
-</p>
-
+<% @vkontakte_campaign.vkontakte_ads.each do |vkontakte_ad| %>
+  <tr>
+   
+    <td><%= link_to vkontakte_ad.name.html_safe, vkontakte_ad %></td>
+    <td><%= link_to vkontakte_ad.vkontakte_campaign.name.html_safe, vkontakte_ad.vkontakte_campaign %></td>
+    <td><%= link_to vkontakte_ad.vkontakte_campaign.vkontakte_client.name, vkontakte_ad.vkontakte_campaign.vkontakte_client %></td>
+    <td><%= vkontakte_ad.status %></td>
+    <td><%= vkontakte_ad.approved %></td>
+    <td id="curr"><%= number_to_currency vkontakte_ad.all_limit %></td>
+    <td><%= vkontakte_ad.cpc %></td>
+    <td><%= vkontakte_ad.cpm %></td>
+    <td><%= vkontakte_ad.disclaimer %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_vkontakte_campaign_path(@vkontakte_campaign) %> |
 <%= link_to 'Back', vkontakte_campaigns_path %>

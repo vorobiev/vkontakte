@@ -14,7 +14,7 @@
 
 <% @vkontakte_campaigns.each do |vkontakte_campaign| %>
   <tr>
-    <td><%= vkontakte_campaign.name %></td>
+    <td><%= link_to vkontakte_campaign.name, vkontakte_campaign %></td>
     <td><%= link_to vkontakte_campaign.vkontakte_client.name.html_safe, vkontakte_campaign.vkontakte_client %></td>
     <td><%= vkontakte_campaign.status %></td>
     <td id="curr"><%= number_to_currency vkontakte_campaign.day_limit %></td>

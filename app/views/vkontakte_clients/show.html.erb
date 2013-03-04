@@ -1,5 +1,63 @@
 <p id="notice"><%= notice %></p>
 
+
+<ul class="breadcrumb">
+   <li><%= link_to 'Клиенты', vkontakte_clients_path %><span class="divider">/</span></li>
+  
+</ul>
+
+<h2><%= @vkontakte_client.name %></h2> 
+
+
+<div class="span11 campaign_panel">
+<div id="div_main">
+<div class="pull-left"> 
+  <dl class="dl-horizontal">
+    <dt>ID: </dt>
+    <dd><%= @vkontakte_client.client_id %></dd>
+    <dt>Клиент: </dt>
+    <dd><%= @vkontakte_client.name %></dd>
+ </dl>
+</div>
+<div class="pull-left">
+ <dl class="dl-horizontal">
+  <dt>Дневной лимит:</dt>
+  <dd><%= number_to_currency @vkontakte_client.day_limit %></dd>
+  <dt>Общий лимит</dt>
+  <dd><%= number_to_currency @vkontakte_client.all_limit %></dd>
+  </dl>
+</div>
+</div>
+</div>
+
+<div class="clearfix"></div>
+<h4>Другие кампании <%= @vkontakte_client.name %></h4>
+
+<table class="table table-striped">
+  <tr>
+    <th>Имя</th>
+    <th>Клиент</th>
+    <th>Status</th>
+    <th id="curr">Дневной лимит</th>
+    <th id="curr">Общий лимит</th>
+    <th>Старт</th>
+    <th>Стоп</th>
+  </tr>
+
+<% @vkontakte_client.vkontakte_campaigns.each do |vkontakte_campaign| %>
+  <tr>
+    <td><%= link_to vkontakte_campaign.name, vkontakte_campaign %></td>
+    <td><%= link_to vkontakte_campaign.vkontakte_client.name.html_safe, @vkontakte_client %></td>
+    <td><%= vkontakte_campaign.status %></td>
+    <td id="curr"><%= number_to_currency vkontakte_campaign.day_limit %></td>
+    <td id="curr"><%= number_to_currency vkontakte_campaign.all_limit %></td>
+    <td><%= vkontakte_campaign.start_time %></td>
+    <td><%= vkontakte_campaign.stop_time %></td>
+  </tr>
+<% end %>
+</table>
+
+
 <p>
   <b>Client:</b>
   <%= @vkontakte_client.client_id %>
@@ -19,7 +77,3 @@
   <b>All limit:</b>
   <%= @vkontakte_client.all_limit %>
 </p>
-
-
-<%= link_to 'Edit', edit_vkontakte_client_path(@vkontakte_client) %> |
-<%= link_to 'Back', vkontakte_clients_path %>
