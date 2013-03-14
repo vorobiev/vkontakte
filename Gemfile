@@ -13,7 +13,7 @@ gem 'awesome_print'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails-bootstrap'
 gem 'russian'
-
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.

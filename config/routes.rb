@@ -1,4 +1,6 @@
 Vkontakte::Application.routes.draw do
+  devise_for :users
+
   resources :vkontakte_ads
 
   resources :vkontakte_campaigns
