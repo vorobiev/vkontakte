@@ -16,34 +16,22 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
 
   </head>
-  <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="<%= root_path %>">VK</a>
-		  <div class="container-fluid nav-collapse">
-		  	<ul class="nav">
-              <li><%= link_to "Клиенты", vkontakte_clients_path  %></li>
-              <li><%= link_to "Кампании", vkontakte_campaigns_path  %></li>
-			  <li><%= link_to "Объявления", vkontakte_ads_path  %></li>
-			
-            </ul>
-		
-		  </div><!--/.nav-collapse -->
-        </div>
+<body>
+  <header class="navbar navbar-fixed-top">
+    <nav class="navbar-inner">
+      <div class="container">
+        <%= render 'layouts/navigation' %>
       </div>
-    </div>
+    </nav>
+  </header>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span12">
-	
-	
-          <%= yield %>
-        </div>
-      </div><!--/row-->
-    </div> <!-- /container -->
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <%= yield %>
+    </div>
+  </div><!--/row-->
+</div> <!-- /container -->
 
     <%= javascript_include_tag "application" %>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
